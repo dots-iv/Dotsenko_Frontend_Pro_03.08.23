@@ -5,17 +5,16 @@
   </head>
   <body>
     <script>
-      // Запитати ім'я користувача
-      var userName = prompt("Введіть ваше ім'я:");
+      var firstString = prompt("Введіть перший рядок:");
+      var secondString = prompt("Введіть другий рядок:");
+      var thirdString = prompt("Введіть третій рядок:");
 
-      // Перевірити, чи користувач ввів ім'я
-      if (userName !== null && userName !== "") {
-        // Вивести вітання з ім'ям користувача через alert
-        alert("Hello, " + userName + "! How are you?");
-      } else {
-        // Якщо користувач не ввів ім'я, вивести просто "Hello!"
-        alert("Hello!");
-      }
+      // Об'єднати рядки у одну строку (конкатенація)
+      var concatenatedString =
+        firstString + " " + secondString + " " + thirdString;
+
+      // Вивести об'єднану строку
+      alert("Результат конкатенації: " + concatenatedString);
     </script>
   </body>
 </html>
