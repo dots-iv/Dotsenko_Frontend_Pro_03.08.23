@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Loops Homework</title>
+  </head>
+  <body>
+    <script>
+      // Print numbers from 10 to 20 in a single line separated by commas.
+      document.write("Numbers from 10 to 20: ");
+      for (let i = 10; i <= 20; i++) {
+        document.write(i);
+        if (i < 20) {
+          document.write(", ");
+        }
+      }
+      document.write("\n\n");
+
+      // Print the squares of numbers from 10 to 20.
+      document.write("Squares of numbers from 10 to 20: ");
+      for (let i = 10; i <= 20; i++) {
+        document.write(i ** 2 + " ");
+      }
+      document.write("\n\n");
+
+      // Print the multiplication table for 7.
+      document.write("Multiplication table for 7:\n");
+      for (let i = 1; i <= 10; i++) {
+        document.write(`7 x ${i} = ${7 * i}\n`);
+      }
+      document.write("\n");
+
+      // Find the sum of all integers from 1 to 15.
+      let sum = 0;
+      for (let i = 1; i <= 15; i++) {
+        sum += i;
+      }
+      document.write(`Sum of integers from 1 to 15: ${sum}\n\n`);
+
+      // Find the product of all integers from 15 to 35.
+      let product = 1;
+      for (let i = 15; i <= 35; i++) {
+        product *= i;
+      }
+      document.write(`Product of integers from 15 to 35: ${product}\n\n`);
+
+      // Find the arithmetic mean of all integers from 1 to 500.
+      sum = 0;
+      for (let i = 1; i <= 500; i++) {
+        sum += i;
+      }
+      let average = sum / 500;
+      document.write(`Average of integers from 1 to 500: ${average}\n\n`);
+
+      // Print the sum of only even numbers in the range from 30 to 80.
+      sum = 0;
+      for (let i = 30; i <= 80; i++) {
+        if (i % 2 === 0) {
+          sum += i;
+        }
+      }
+      document.write(`Sum of even numbers from 30 to 80: ${sum}\n\n`);
+
+      // Print all numbers in the range from 100 to 200 that are divisible by 3.
+      document.write("Numbers from 100 to 200 divisible by 3: ");
+      for (let i = 100; i <= 200; i++) {
+        if (i % 3 === 0) {
+          document.write(i + " ");
+        }
+      }
+      document.write("\n\n");
+
+      // Given a natural number, find and print all its divisors.
+      const number = 60; // You can replace 60 with any natural number
+      document.write(`Divisors of ${number}: `);
+      for (let i = 1; i <= number; i++) {
+        if (number % i === 0) {
+          document.write(i + " ");
+        }
+      }
+      document.write("\n\n");
+
+      // Determine the number of even divisors of the given number.
+      let evenDivisors = 0;
+      for (let i = 1; i <= number; i++) {
+        if (number % i === 0 && i % 2 === 0) {
+          evenDivisors++;
+        }
+      }
+      document.write(
+        `Number of even divisors of ${number}: ${evenDivisors}\n\n`
+      );
+
+      // Find the sum of the even divisors of the given number.
+      let sumEvenDivisors = 0;
+      for (let i = 1; i <= number; i++) {
+        if (number % i === 0 && i % 2 === 0) {
+          sumEvenDivisors += i;
+        }
+      }
+      document.write(
+        `Sum of even divisors of ${number}: ${sumEvenDivisors}\n\n`
+      );
+
+      // Print the complete multiplication table from 1 to 10.
+      document.write("Multiplication table:\n");
+      for (let i = 1; i <= 10; i++) {
+        for (let j = 1; j <= 10; j++) {
+          document.write(`${i} x ${j} = ${i * j}\n`);
+        }
+        document.write("\n");
+      }
+    </script>
+  </body>
+</html>

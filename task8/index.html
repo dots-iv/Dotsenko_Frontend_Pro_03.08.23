@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Manipulation</title>
+  </head>
+  <body>
+    <h2>Array Manipulation</h2>
+    <label for="arrayLength">Enter the length of the array:</label>
+    <input type="number" id="arrayLength" />
+    <button id="createArrayButton">Create Array</button>
+    <pre id="arrayContent"></pre>
+
+    <script>
+      const createArrayButton = document.getElementById("createArrayButton");
+      const arrayContent = document.getElementById("arrayContent");
+
+      createArrayButton.addEventListener("click", function () {
+        const arrayLengthInput = document.getElementById("arrayLength");
+        const arrayLength = parseInt(arrayLengthInput.value);
+
+        if (isNaN(arrayLength) || arrayLength <= 0) {
+          arrayContent.textContent = "Please enter a valid array length.";
+          return;
+        }
+
+        const originalArray = [];
+        for (let i = 0; i < arrayLength; i++) {
+          const element = prompt("Enter element at index " + i + ":");
+          originalArray.push(element);
+        }
+
+        // Sort the array in ascending order
+        originalArray.sort();
+
+        // Remove elements from index 2 to 4 (inclusive)
+        originalArray.splice(2, 3);
+
+        // Display the array content
+        let modifiedArrayContent = "Modified Array: ";
+        for (let i = 0; i < originalArray.length; i++) {
+          modifiedArrayContent += originalArray[i];
+          if (i !== originalArray.length - 1) {
+            modifiedArrayContent += ", ";
+          }
+        }
+        arrayContent.textContent = modifiedArrayContent;
+      });
+    </script>
+  </body>
+</html>
