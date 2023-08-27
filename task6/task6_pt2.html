@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Loops Tasks</title>
+  </head>
+  <body>
+    <h2>Task 1: Display Numbers with Step 0.5</h2>
+    <pre id="task1"></pre>
+
+    <h2>Task 2: Currency Exchange</h2>
+    <pre id="task2"></pre>
+
+    <h2>Task 3: Squares within Limit</h2>
+    <pre id="task3"></pre>
+
+    <h2>Task 4: Check for Prime Number</h2>
+    <pre id="task4"></pre>
+
+    <h2>Task 5: Power of Three</h2>
+    <pre id="task5"></pre>
+
+    <script>
+      // Task 1
+      let task1Output = "";
+      for (let i = 20; i <= 30; i += 0.5) {
+        task1Output += i + " ";
+      }
+      document.getElementById("task1").textContent = task1Output;
+
+      // Task 2
+      const exchangeRate = 27;
+      let task2Output = "";
+      for (let dollars = 10; dollars <= 100; dollars += 10) {
+        const grivnas = dollars * exchangeRate;
+        task2Output += `${dollars} доларів = ${grivnas} гривень\n`;
+      }
+      document.getElementById("task2").textContent = task2Output;
+
+      // Task 3
+      const N = 100;
+      let task3Output = "";
+      for (let i = 1; i <= 100; i++) {
+        if (i * i <= N) {
+          task3Output += i + " ";
+        }
+      }
+      document.getElementById("task3").textContent = task3Output;
+
+      // Task 4
+      const num = 17;
+      let isPrime = true;
+
+      if (num > 1) {
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+      } else {
+        isPrime = false;
+      }
+
+      document.getElementById("task4").textContent = isPrime
+        ? `${num} є простим числом`
+        : `${num} не є простим числом`;
+
+      // Task 5
+      const target = 81;
+      let powerOfThree = 1;
+
+      while (powerOfThree < target) {
+        powerOfThree *= 3;
+      }
+
+      document.getElementById("task5").textContent =
+        powerOfThree === target
+          ? `${target} можна отримати шляхом зведення числа 3 у деякий ступінь`
+          : `${target} не можна отримати шляхом зведення числа 3 у деякий ступінь`;
+    </script>
+  </body>
+</html>
