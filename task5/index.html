@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Part 1
+const birthYear = prompt("Введіть рік вашого народження:");
+const city = prompt("Введіть місто, в якому ви живете:");
+const favoriteSport = prompt("Введіть ваш улюблений вид спорту:");
+
+const currentYear = new Date().getFullYear();
+const age = currentYear - birthYear;
+
+let message = `Ваш вік: ${age} років\n`;
+
+const capitals = {
+    "Київ": "Україна",
+    "Вашингтон": "США",
+    "Лондон": "Велика Британія"
+};
+
+if (capitals[city]) {
+    message += `Ти живеш у столиці ${city} країни ${capitals[city]}`;
+} else {
+    message += `Ти живеш у місті ${city}`;
+}
+
+// Part 2 
+const sportsChampions = {
+    "футбол": "Пеле",
+    "баскетбол": "Майкл Джордан",
+    "теніс": "Серена Вільямс"
+};
+
+if (sportsChampions[favoriteSport]) {
+    message += `\nКруто! Хочеш стати ${sportsChampions[favoriteSport]}?`;
+} else {
+    message += "\nШкода, що Ви не захотіли ввести свій(ю) рік народження, місто або улюблений вид спорту.";
+}
+
+alert(message);
+
+    </script>
+</body>
+</html>

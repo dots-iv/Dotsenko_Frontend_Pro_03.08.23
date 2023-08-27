@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // Five-digit number
+var number = 12345;
+
+// 
+//   Converting a number to a string
+var numberString = number.toString();
+
+// Using the replace method to add spaces between numbers
+var resultString = numberString.replace(/(\d)(?=\d)/g, '$1 ');
+
+// Result
+console.log(resultString);
+
+</script>
+
+  
+
+</body>
+</html> 
