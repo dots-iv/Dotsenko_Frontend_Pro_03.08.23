@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сума чисел</title>
+</head>
+<body>
+    <h1>Оберіть число та натисніть кнопку</h1>
+    <input type="number" id="numberInput" placeholder="Введіть число">
+    <button onclick="addToSum()">Додати до суми</button>
+    <p>Поточна сума: <span id="currentSum">0</span></p>
+
+    <script>
+        function createSum() {
+            let total = 0;
+
+            return function (x) {
+                total += x;
+                return total;
+            };
+        }
+
+        const sum = createSum();
+        const numberInput = document.getElementById('numberInput');
+        const currentSumElement = document.getElementById('currentSum');
+
+        function addToSum() {
+            const inputValue = parseInt(numberInput.value);
+            if (!isNaN(inputValue)) {
+                const newSum = sum(inputValue);
+                currentSumElement.textContent = newSum;
+            }
+            numberInput.value = '';
+        }
+    </script>
+</body>
+</html>

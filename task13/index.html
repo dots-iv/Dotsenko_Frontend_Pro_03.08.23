@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ladder = {
+    step: 0,
+    up: function () {
+        this.step++;
+        return this; // Return the 'ladder' object for chaining
+    },
+    down: function () {
+        this.step--;
+        return this; // Return the 'ladder' object for chaining
+    },
+    showStep: function () {
+        alert(this.step);
+        return this; // Return the 'ladder' object for chaining
+    }
+};
+
+// Now you can call methods in a chain
+ladder.up().up().down().showStep(); // 1
+
+    </script>
+</body>
+</html>
