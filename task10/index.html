@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Обчислення середнього арифметичного числових елементів у масиві: -->
+    <script>
+        function calculateAverage(arr) {
+    let sum = 0;
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'number') {
+            sum += arr[i];
+            count++;
+        }
+    }
+
+    if (count === 0) {
+        return 0; // Якщо в масиві немає чисел
+    }
+
+    return sum / count;
+}
+
+const array = [1, 'two', 3, 'four', 5];
+const average = calculateAverage(array);
+console.log(average);
+
+    </script>
+
+    <!-- Функція doMath, яка обчислює вираз, отримуючи числа та операцію від користувача: -->
+    <script>
+        function doMath(x, znak, y) {
+    switch (znak) {
+        case '+':
+            return x + y;
+        case '-':
+            return x - y;
+        case '*':
+            return x * y;
+        case '/':
+            return x / y;
+        case '%':
+            return x % y;
+        case '^':
+            return Math.pow(x, y);
+        default:
+            return 'Невідома операція';
+    }
+}
+
+const x = parseFloat(prompt('Введіть перше число:'));
+const znak = prompt('Введіть операцію (+, -, *, /, %, ^):');
+const y = parseFloat(prompt('Введіть друге число:'));
+
+const result = doMath(x, znak, y);
+console.log(`Результат: ${result}`);
+
+    </script>
+    <!-- Функція, яка дозволяє користувачу заповнити двомірний масив: -->
+    <script>
+        function fill2DArray(rows, cols) {
+    const result = [];
+    
+    for (let i = 0; i < rows; i++) {
+        const innerArray = [];
+        for (let j = 0; j < cols; j++) {
+            const value = prompt(`Введіть значення для елементу [${i}][${j}]:`);
+            innerArray.push(value);
+        }
+        result.push(innerArray);
+    }
+    
+    return result;
+}
+
+const rows = parseInt(prompt('Введіть кількість рядків:'));
+const cols = parseInt(prompt('Введіть кількість стовпців:'));
+
+const userArray = fill2DArray(rows, cols);
+console.log(userArray);
+
+    </script>
+    <!-- Функція, яка видаляє символи із рядка, які передані другим аргументом: -->
+
+    <script>
+
+function removeChars(str, charsToRemove) {
+    for (const char of charsToRemove) {
+        str = str.split(char).join('');
+    }
+    return str;
+}
+
+const inputString = prompt('Введіть рядок:');
+const charsToRemove = prompt('Введіть символи для видалення (без пробілів, наприклад, "ld"):').split('');
+
+const resultString = removeChars(inputString, charsToRemove);
+console.log(resultString);
+
+    </script>
+</body>
+</html>
