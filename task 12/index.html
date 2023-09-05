@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pow(num, degree) {
+    // Base case: If the degree is 0, the result is 1.
+    if (degree === 0) {
+        return 1;
+    }
+    
+    // Recursive case: Multiply the number by the result of raising it to the power (degree - 1).
+    return num * pow(num, degree - 1);
+}
+
+// Example usage:
+const result = pow(2, 3); // Raise 2 to the power of 3
+console.log(result); // Will output 8
+    </script>
+</body>
+</html>
