@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Секундомір</title>
+  <style>
+    .stopwatch {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .time-display {
+      margin-bottom: 10px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 5px 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stopwatch">
+    <div class="time-display">
+      <span class="hours">00</span>:
+      <span class="minutes">00</span>:
+      <span class="seconds">00</span>
+    </div>
+    <button class="start-button">Start</button>
+    <button class="pause-button">Pause</button>
+    <button class="reset-button">Reset</button>
+  </div>
+
+  <script>
+    class StopWatch {
+      constructor() {
+        this.isRunning = false;
+        this.hours = 0;
+        this.minutes = 0;
+        this.seconds = 0;
+        this.intervalId = null;
+
+        this.timeDisplay = document.querySelector(".time-display");
+        this.startButton = document.querySelector(".start-button");
+        this.pauseButton = document.querySelector(".pause-button");
+        this.resetButton = document.querySelector(".reset-button");
+
+        this.startButton.addEventListener("click", this.start.bind(this));
+        this.pauseButton.addEventListener("click", this.pause.bind(this));
+        this.resetButton.addEventListener("click", this.reset.bind(this));
+      }
+
+      start() {
+        if (!this.isRunning) {
+          this.intervalId = setInterval(() => {
+            this.seconds++;
+            if (this.seconds === 60) {
+              this.seconds = 0;
+              this.minutes++;
+              if (this.minutes === 60) {
+                this.minutes = 0;
+                this.hours++;
+              }
+            }
+            this.updateDisplay();
+          }, 1000);
+          this.isRunning = true;
+        }
+      }
+
+      pause() {
+        if (this.isRunning) {
+          clearInterval(this.intervalId);
+          this.isRunning = false;
+        }
+      }
+
+      reset() {
+        this.pause();
+        this.hours = 0;
+        this.minutes = 0;
+        this.seconds = 0;
+        this.updateDisplay();
+      }
+
+      updateDisplay() {
+        const formatTime = (time) => (time < 10 ? `0${time}` : `${time}`);
+        this.timeDisplay.innerHTML = `${formatTime(this.hours)}:${formatTime(
+          this.minutes
+        )}:${formatTime(this.seconds)}`;
+      }
+    }
+
+    const stopWatch = new StopWatch();
+  </script>
+</body>
+</html>
